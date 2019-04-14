@@ -381,3 +381,14 @@ variable "elb_scheme" {
   default     = "public"
   description = "Specify `internal` if you want to create an internal load balancer in your Amazon VPC so that your Elastic Beanstalk application cannot be accessed from outside your Amazon VPC"
 }
+
+variable "worker_queue_url" {
+  default     = ""
+  description = "The URL of the queue from which the worker daemon in the worker environment tier reads messages"
+}
+
+variable "worker_http_path" {
+  default     = "/"
+  description = "The relative path to the worker application to which HTTP POST messages are sent"
+}
+

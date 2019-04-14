@@ -1021,6 +1021,19 @@ resource "aws_elastic_beanstalk_environment" "default" {
     name      = "Notification Topic Name"
     value     = "${var.notification_topic_name}"
   }
+
+  ###=========================== Worker Tier Settings  ========================== ###
+  # https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html#command-options-general-elasticbeanstalksqsd
+  setting {
+    namespace = "aws:elasticbeanstalk:sqsd"
+    name      = "WorkerQueueURL"
+    value     = "${var.worker_queue_url}"
+  }
+  setting {
+    namespace = "aws:elasticbeanstalk:sqsd"
+    name      = "HttpPath"
+    value     = "${var.worker_http_path}"
+  }
   depends_on = ["aws_security_group.default"]
 }
 

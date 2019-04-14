@@ -137,6 +137,8 @@ Available targets:
 | vpc_id | ID of the VPC in which to provision the AWS resources | string | - | yes |
 | wait_for_ready_timeout | The maximum duration that Terraform should wait for an Elastic Beanstalk Environment to be in a ready state before timing out. | string | `20m` | no |
 | zone_id | Route53 parent zone ID. The module will create sub-domain DNS records in the parent zone for the EB environment | string | `` | no |
+| worker_queue_url | The URL of the queue from which the daemon in the worker environment tier reads messages. If you don't specify a value, then Elastic Beanstalk automatically creates a queue. | string | `` | no |
+| worker_http_path | The relative path to the worker application to which HTTP POST messages are sent. | string | `/` | no |
 
 ## Outputs
 
